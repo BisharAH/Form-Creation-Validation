@@ -14,19 +14,19 @@ document.addEventListener("DOMContentLoaded", () => {
     let isValid = true;
     const messages = [];
 
-    // Validate username
+    // Username validation
     if (username.length < 3) {
       isValid = false;
       messages.push("Username must be at least 3 characters long.");
     }
 
-    // Validate email
+    // Email validation
     if (!email.includes("@") || !email.includes(".")) {
       isValid = false;
       messages.push("Please enter a valid email address.");
     }
 
-    // Validate password
+    // Password validation
     if (password.length < 8) {
       isValid = false;
       messages.push("Password must be at least 8 characters long.");
@@ -34,14 +34,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Show feedback
     feedbackDiv.style.display = "block";
+
     if (isValid) {
       feedbackDiv.textContent = "Registration successful!";
-      feedbackDiv.style.color = "#28a745"; // Green
-      feedbackDiv.style.backgroundColor = "#d4edda";
+      feedbackDiv.style.color = "#28a745"; // Green text
+      feedbackDiv.style.backgroundColor = "#d4edda"; // Light green background
     } else {
       feedbackDiv.innerHTML = messages.join("<br>");
-      feedbackDiv.style.color = "#d8000c"; // Red
-      feedbackDiv.style.backgroundColor = "#ffbaba";
+      feedbackDiv.style.color = "#dc3545"; // Error red text (Bootstrap red)
+      feedbackDiv.style.backgroundColor = "#f8d7da"; // Light red background
     }
   });
 });
